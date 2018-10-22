@@ -1,0 +1,15 @@
+sodu: required
+services:
+  - docker
+
+before_install:
+  - docker build -t astrals63/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run astrals63/react-test npm test -- --coverage
+
+after_sucess:
+  - docker build -t astrals63/multi-client ./client
+  - docker build -t astrals63/multi-nginx ./nginx
+  - docker build -t astrals63/multi-server ./server
+  - docker build -t astrals63/multi-worker ./worker
