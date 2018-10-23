@@ -8,7 +8,7 @@ before_install:
 script:
   - docker run astrals63/react-test npm test -- --coverage
 
-after_sucess:
+after_success:
   - docker build -t astrals63/multi-client ./client
   - docker build -t astrals63/multi-nginx ./nginx
   - docker build -t astrals63/multi-server ./server
