@@ -14,7 +14,7 @@ after_success:
   - docker build -t astrals63/multi-server ./server
   - docker build -t astrals63/multi-worker ./worker
   # log into docker cli
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Push images to docker hub
   - docker push astrals63/multi-client
   - docker push astrals63/multi-nginx
