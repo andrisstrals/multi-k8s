@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: strals-com-tls
+spec:
+  secretName: strals-com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: strals.com
+  dnsNames:
+    - strals.com
+    - www.strals.com
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - strals.com
+          - www.strals.com
