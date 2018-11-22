@@ -10,8 +10,8 @@ metadata:
 spec:
   tls:
      - hosts:
-        - astrals.com
-        - www.astrals.com
+        - strals.com
+        - www.strals.com
       secretName: strals-com
   rules:
     - host: strals.com
