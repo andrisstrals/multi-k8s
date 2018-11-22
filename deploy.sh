@@ -10,7 +10,7 @@ docker push astrals63/multi-client:$GIT_SHA
 docker push astrals63/multi-server:$GIT_SHA
 docker push astrals63/multi-worker:$GIT_SHA
 
-kubectl -f k8s
+kubectl apply -f k8s
 
 kubectl set image deployments/client-deployment client=astrals63/multi-client:$GIT_SHA
 kubectl set image deployments/server-deployment server=astrals63/multi-server:$GIT_SHA
